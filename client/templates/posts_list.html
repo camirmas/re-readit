@@ -1,0 +1,17 @@
+<template name="postsList">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Re-Reddit</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList class=""}}
+        {{#each posts}}
+          {{#ionItem buttonRight=true avatar=true}}
+            {{data.title}}
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>
