@@ -1,0 +1,13 @@
+<template name="postItem">
+  {{#ionItem href=postURL}}
+    <div class="score">
+      {{data.score}}
+    </div>
+    <div class="description">
+      <h2>{{data.title}}</h2>
+      <p>
+        by: {{data.author}} | to: {{data.subreddit}}
+      </p>
+    </div>
+  {{/ionItem}}
+</template>
