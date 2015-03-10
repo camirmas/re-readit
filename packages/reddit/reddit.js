@@ -8,7 +8,6 @@ Reddit.getPosts = function(link) {
   );
 
   if (posts.statusCode === 200) {
-    console.log(posts.data.data.children);
     return posts.data.data.children;
   }
 };

@@ -2,3 +2,14 @@ $loading-font-size: 22px;
 
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+
+.score {
+  float: left;
+  font-size: 2em;
+  margin-right: 10px;
+}
+
+.description {
+  float: left;
+}

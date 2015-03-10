@@ -5,10 +5,24 @@
 
   {{#ionView}}
     {{#ionContent}}
+    <label class="item item-input">
+      <input type="text" placeholder="subreddit">
+    </label>
+    <button class="button button-block button-balanced">
+      Submit
+    </button>
       {{#ionList class=""}}
         {{#each posts}}
-          {{#ionItem buttonRight=true avatar=true}}
-            {{data.title}}
+          {{#ionItem}}
+          <div class="score">
+            {{data.score}}
+          </div>
+            <div class="description">
+              <h2>{{data.title}}</h2>
+              <p>
+                by: {{data.author}} | to: {{data.subreddit}}
+              </p>
+            </div>
           {{/ionItem}}
         {{/each}}
       {{/ionList}}

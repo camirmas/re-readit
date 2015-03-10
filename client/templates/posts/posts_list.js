@@ -1,5 +1,6 @@
-Template.postsList.helpers({
-  posts: function() {
-    return RedditPosts.find();
+Template.postsList.events({
+  'click button': function(e) {
+    var search = $("input").val();
+    Router.go('subPostsList', {sub: search});
   }
 });
