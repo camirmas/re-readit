@@ -8,7 +8,7 @@
       <label class="item item-input">
         <input type="text" placeholder="subreddit">
       </label>
-      <button class="button button-block button-balanced">
+      <button class="button button-block button-balanced find-sub">
         Submit
       </button>
       {{#ionList class=""}}
@@ -16,6 +16,7 @@
           {{> postItem}}
         {{/each}}
       {{/ionList}}
+      <a href={{nextPath}} class="button button-block button-positive load-more">Load More</a>
     {{/ionContent}}
   {{/ionView}}
 </template>
