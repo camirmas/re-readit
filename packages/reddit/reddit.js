@@ -28,8 +28,8 @@ Reddit.getNextPage = function() {
   });
 
   if (posts.statusCode === 200) {
-    Reddit.prevPage = posts.data.before;
-    Reddit.nextPage = posts.data.after;
+    Reddit.prevPage = posts.data.data.before;
+    Reddit.nextPage = posts.data.data.after;
     return posts.data.data.children;
   }
 }
