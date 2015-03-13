@@ -4,7 +4,8 @@ Template.postsList.events({
     Router.go('subPostsList', {sub: search});
   },
   'click .load-more': function(e) {
-    var page = parseInt($(e.target).attr('href'));
-    $(e.target).attr('href', page + 1);
+    var page = $(e.target).data('page') + 1;
+    $(e.target).data('page', page);
+    Router.go('postsList', {page: page});
   }
 });
