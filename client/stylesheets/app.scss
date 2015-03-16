@@ -14,6 +14,10 @@ $loading-font-size: 22px;
   float: left;
 }
 
-img, #player {
+img, #player, iframe {
   width: 100%;
+}
+
+iframe {
+  height: 400px;
 }
