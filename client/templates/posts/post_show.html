@@ -9,7 +9,18 @@
 
   {{#ionView}}
     {{#ionContent}}
-      <h1>{{title}}</h1>
+      {{#if imgurImage}}
+        {{> imgurImageShow}}
+      {{/if}}
+      {{#if imgurGallery}}
+        {{> imgurGalleryShow}}
+      {{/if}}
+      {{#if youtube}}
+        {{> youtubeShow}}
+      {{/if}}
+      {{#if vimeo}}
+        {{> vimeoShow}}
+      {{/if}}
     {{/ionContent}}
   {{/ionView}}
 </template>
