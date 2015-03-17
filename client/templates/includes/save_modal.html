@@ -1,0 +1,16 @@
+<template name="saveModal">
+  {{#ionModal title="Save to Board"}}
+    <div class="list">
+      {{#each boards}}
+        <label class="item item-radio">
+          <input type="radio" name="group">
+          <div class="item-content">
+            {{name}}
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+      {{/each}}
+    </div>
+    <button class="button button-block button-positive save-button">Save</button>
+  {{/ionModal}}
+</template>

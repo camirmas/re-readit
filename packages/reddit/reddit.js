@@ -5,8 +5,8 @@ Reddit = {
 };
 
 Reddit.getPosts = function(link) {
+  console.log("calling");
   var posts = Meteor.http.get(link, {
-      timeout: 5000,
       params: {}
     }
   );
@@ -19,8 +19,8 @@ Reddit.getPosts = function(link) {
 };
 
 Reddit.getNextPage = function() {
+  console.log("calling next");
   var posts = Meteor.http.get(Reddit.callUrl, {
-    timeout: 5000,
     params: {
       after: Reddit.nextPage,
       count: 25

@@ -4,24 +4,35 @@
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">{{subreddit}}</h1>
+    <h1 class="title">{{post.data.subreddit}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
-      {{#if imgurImage}}
+      <div class="row responsive-sm">
+        <div class="col col-10"></div>
+        <div class="col col-80">
+          <a target="_blank" href="{{post.data.url}}"><span class="post-title">{{post.data.title}}</span></a>
+          <p>
+            by: {{post.data.author}}
+          </p>
+          <button data-ion-modal="saveModal" class="button save-modal">Save</button>
+        </div>
+        <div class="col col-10"></div>
+      </div>
+      {{#if post.imgurImage}}
         {{> imgurImageShow}}
       {{/if}}
-      {{#if imgurGifv}}
+      {{#if post.imgurGifv}}
         {{> imgurGifvShow}}
       {{/if}}
-      {{#if imgurGallery}}
+      {{#if post.imgurGallery}}
         {{> imgurGalleryShow}}
       {{/if}}
-      {{#if youtube}}
+      {{#if post.youtube}}
         {{> youtubeShow}}
       {{/if}}
-      {{#if vimeo}}
+      {{#if post.vimeo}}
         {{> vimeoShow}}
       {{/if}}
     {{/ionContent}}

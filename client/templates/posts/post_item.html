@@ -1,5 +1,5 @@
 <template name="postItem">
-  {{#ionItem href=postURL class="row responsive-sm"}}
+  {{#ionItem href=postURL class="row responsive-sm post"}}
     <div class="thumbnail col col-10">
       <img src="{{thumbnail}}" alt="" />
     </div>
@@ -7,7 +7,7 @@
       {{data.score}}
     </div>
     <div class="description col col-80">
-      <div class="title item-text-wrap">
+      <div class="item-text-wrap">
         <h2>{{data.title}}</h2>
       </div>
       <p>

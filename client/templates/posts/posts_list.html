@@ -5,12 +5,21 @@
 
   {{#ionView}}
     {{#ionContent}}
-      <label class="item item-input">
-        <input type="text" placeholder="subreddit">
-      </label>
-      <button class="button button-block button-balanced find-sub">
-        Submit
-      </button>
+      <div class="row">
+        <div class="col col-20">
+          <label class="item item-input">
+            <input type="text" placeholder="subreddit">
+          </label>
+        </div>
+        <div class="col col-10">
+          <button class="button button-balanced find-sub">
+            Submit
+          </button>
+        </div>
+        <div class="col col-20">
+          <button data-ion-modal="addBoardModal" class="button">Add Board</button>
+        </div>
+      </div>
       {{#ionList}}
         {{#each posts}}
           {{> postItem}}
