@@ -1,0 +1,13 @@
+<template name="boardsList">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Boards</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#each boards}}
+        {{> boardCard}}
+      {{/each}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>
