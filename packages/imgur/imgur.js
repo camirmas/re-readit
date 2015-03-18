@@ -19,7 +19,7 @@ Imgur.getGallery = function(id) {
     }
   });
 
-  return image.data.data.images;
+  return image.data.data;
 }
 
 Imgur.getAlbum = function(id) {

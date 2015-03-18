@@ -1,13 +1,20 @@
 <template name="boardsList">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+  
   {{#contentFor "headerTitle"}}
     <h1 class="title">Boards</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
-      {{#each boards}}
-        {{> boardCard}}
-      {{/each}}
+      <button data-ion-modal="addBoardModal" class="button">Add Board</button>
+      <div class="row responsive-md boards">
+        {{#each boards}}
+          {{> boardCard}}
+        {{/each}}
+      </div>
     {{/ionContent}}
   {{/ionView}}
 </template>

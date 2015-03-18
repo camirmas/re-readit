@@ -1,5 +1,5 @@
 Template.boardCard.helpers({
   coverImage: function() {
-    //find a post associated with this board and grab the image/thumbnail
+    return "http://placehold.it/600x400&text=hello+:)";
   }
 });

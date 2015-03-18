@@ -5,5 +5,10 @@
     {{#ionNavView}}
       {{>yield}}
     {{/ionNavView}}
+
+    {{#ionTabs}}
+      {{> ionTab title="Home" path="postsList" icon="home"}}
+      {{> ionTab title="Boards" path="boardsList" icon="bookmark"}}
+    {{/ionTabs}}
   {{/ionBody}}
 </template>
