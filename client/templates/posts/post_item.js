@@ -1,9 +1,9 @@
 Template.postItem.helpers({
   postURL: function() {
-    return '/r/' + this.data.subreddit + '/post/' + this.data.id;
+    return '/r/' + this.subreddit + '/post/' + this.redditId;
   },
   thumbnail: function() {
-    return this.data.thumbnail || "http://placehold.it/140x100&text=hello+:)";
+    return this.thumbnail || "http://placehold.it/140x100&text=hello+:)";
   }
 });
 

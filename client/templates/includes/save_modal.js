@@ -14,10 +14,15 @@ Template.saveModal.events({
 
     var selected = $('.selected').text().trim();
     var board = Boards.findOne({name: selected});
-    var post = {
-      content: Session.get('currentPost'),
-      boardId: board._id
-    };
-    Meteor.call('saveToBoard', post);
+    var post = Session.get('currentPost');
+    post.boardId = board._id;
+    Meteor.call('saveToBoard', post, function(err, res) {
+      if (err) {
+        $(".board-form .item").addClass("error");
+        $(".board-name").attr("placeholder", err.reason);
+      } else {
+        $('*[data-dismiss="modal"]').trigger('click');
+      }
+    });
   }
 });
