@@ -9,7 +9,7 @@ Template.youtubeShow.rendered = function() {
         videoId: id,
         events: {
           onReady: function (event) {
-            event.target.playVideo();
+            event.target.loadVideo();
           }
         }
       });

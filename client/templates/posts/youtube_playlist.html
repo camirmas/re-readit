@@ -2,21 +2,24 @@
   {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton}}
   {{/contentFor}}
-  
-  <div class="row responsive-sm">
-    <div class="col col-10"></div>
-    <div class="col col-80">
-      <div id="playlist-player"></div>
-    </div>
-    <div class="col col-10"></div>
-  </div>
-  <div class="row responsive-sm">
-    <div class="col col-10"></div>
-    <div class="col col-80">
-      <button class='previous-video'>Previous</button>
-      <button class='next-video'>Next</button>
-    </div>
-    <div class="col col-10"></div>
 
-  </div>
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="row responsive-sm">
+        <div class="col col-10"></div>
+        <div class="col col-80">
+          <div id="playlist-player"></div>
+        </div>
+        <div class="col col-10"></div>
+      </div>
+      <div class="row responsive-sm">
+        <div class="col col-10"></div>
+        <div class="col col-80">
+          <button class='previous-video'>Previous</button>
+          <button class='next-video'>Next</button>
+        </div>
+        <div class="col col-10"></div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
 </template>

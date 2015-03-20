@@ -1,12 +1,76 @@
+Template.postsList.helpers({
+  firstPage: function() {
+    return !Session.get('page');
+  }
+});
+
 Template.postsList.events({
   'click .find-sub': function(e) {
     var search = $("input").val();
     Router.go('subPostsList', {sub: search});
   },
-  'click .load-more': function(e) {
-    var page = $(e.target).data('page') + 1;
-    $(e.target).data('page', page);
-    Router.go('postsList', {page: page});
+  'click .load-next': function(e) {
+    var page = parseInt(Session.get('page')) || 0;
+    page += 1;
+    RedditPosts.remove({}, function() {
+      Meteor.call('getNextPage', function(error, result) {
+        _.each(result, function(item) {
+          RedditPosts.insert({
+            title: item.data.title,
+            author: item.data.author,
+            subreddit: item.data.subreddit,
+            url: item.data.url,
+            redditId: item.data.id,
+            score: item.data.score,
+            domain: item.data.domain,
+            thumbnail: item.data.thumbnail,
+            permalink: item.data.permalink
+          });
+        });
+      });
+    });
+    var sub = Session.get('currentSub');
+    if (sub) {
+      Router.go('subPostsList', {sub: sub, page: page});
+    } else {
+      Router.go('postsList', {page: page});
+    }
+  },
+  'click .load-prev': function(e) {
+    var page = parseInt(Session.get('page')) - 1;
+    RedditPosts.remove({}, function() {
+      Meteor.call('getPrevPage', function(error, result) {
+        _.each(result, function(item) {
+          RedditPosts.insert({
+            title: item.data.title,
+            author: item.data.author,
+            subreddit: item.data.subreddit,
+            url: item.data.url,
+            redditId: item.data.id,
+            score: item.data.score,
+            domain: item.data.domain,
+            thumbnail: item.data.thumbnail,
+            permalink: item.data.permalink
+          });
+        });
+      });
+    });
+    var sub = Session.get('currentSub');
+    
+    if (page === 0) {
+      delete Session.keys['page'];
+      if (sub) {
+        Router.go('subPostsList', {sub: sub});
+      } else {
+        Router.go('postsList');
+      }
+    } else {
+      if (sub) {
+        Router.go('subPostsList', {sub: sub, page: page});
+      } else {
+        Router.go('postsList', {page: page});
+      }
+    }
   },
   'click .youtube-playlist': function(e) {
     var redditPosts = this.posts.collection._docs._map;

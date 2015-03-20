@@ -22,7 +22,7 @@ Template.youtubePlaylist.rendered = function() {
     };
 
     function onPlayerReady(event) {
-      player2.loadPlaylist({playlist: playlistIds, index: 0});
+      player2.cuePlaylist({playlist: playlistIds, index: 0});
     }
 
     YT.load();

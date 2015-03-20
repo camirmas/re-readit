@@ -5,7 +5,6 @@ Reddit = {
 };
 
 Reddit.getPosts = function(link) {
-  console.log("calling");
   var posts = Meteor.http.get(link, {
       params: {}
     }
@@ -19,7 +18,6 @@ Reddit.getPosts = function(link) {
 };
 
 Reddit.getNextPage = function() {
-  console.log("calling next");
   var posts = Meteor.http.get(Reddit.callUrl, {
     params: {
       after: Reddit.nextPage,
