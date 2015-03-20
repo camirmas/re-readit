@@ -10,13 +10,15 @@ Template.postsList.events({
   },
   'click .youtube-playlist': function(e) {
     var redditPosts = this.posts.collection._docs._map;
+    var urlArr;
     var idIndex;
     var id;
     var idArr = [];
     _.each(redditPosts, function (post) {
-      if (post.domain.indexOf('youtube') !== -1) {
-        idIndex = post.url.match(/[\w-]+/g).indexOf('v') + 1;
-        id = post.url.match(/[\w-]+/g)[idIndex];
+      if (post.domain.indexOf('youtube.com') !== -1) {
+        urlArr = post.url.match(/[\w-]+/g);
+        idIndex = urlArr.indexOf('v') + 1;
+        id = urlArr[idIndex].slice(0,11);
         if (id !== 'http' && id !== 'https') {
           idArr.push(id);
         }
