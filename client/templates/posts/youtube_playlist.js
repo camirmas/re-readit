@@ -1,9 +1,9 @@
 Template.youtubePlaylist.events({
   'click .next-video': function(e) {
-    player.nextVideo();
+    player2.nextVideo();
   },
   'click .previous-video': function(e) {
-    player.previousVideo();
+    player2.previousVideo();
   },
 })
 
@@ -12,7 +12,7 @@ Template.youtubePlaylist.rendered = function() {
     var playlistIds = this.data.split(',');
     console.log(playlistIds);
     onYouTubeIframeAPIReady = function () {
-      player = new YT.Player("playlist-player", {
+      player2 = new YT.Player("playlist-player", {
         height: "400",
         width: "600",
         events: {
@@ -22,7 +22,7 @@ Template.youtubePlaylist.rendered = function() {
     };
 
     function onPlayerReady(event) {
-      player.loadPlaylist({playlist: playlistIds, index: 0});
+      player2.loadPlaylist({playlist: playlistIds, index: 0});
     }
 
     YT.load();

@@ -17,10 +17,12 @@ Template.postsList.events({
       if (post.domain.indexOf('youtube') !== -1) {
         idIndex = post.url.match(/[\w-]+/g).indexOf('v') + 1;
         id = post.url.match(/[\w-]+/g)[idIndex];
-        idArr.push(id);
+        if (id !== 'http' && id !== 'https') {
+          idArr.push(id);
+        }
       }
     });
-    
+
     Router.go('/youtube/' + idArr);
   }
 });
