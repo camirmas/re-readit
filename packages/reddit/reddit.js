@@ -58,5 +58,21 @@ Meteor.methods({
   },
   'getPrevPage': function() {
     return Reddit.getPrevPage();
+  },
+  'getText': function(url) {
+    var redditUrl = 'http://www.reddit.com' + url
+    var redditPage = Meteor.http.get(redditUrl);
+    var cheerio = Meteor.npmRequire('cheerio');
+    var $ = cheerio.load(redditPage.content);
+    var counter=0
+    var text;
+    $('.usertext-body').each(function() {
+      if (counter == 1) {
+        console.log($(this).html());
+        text = ($(this).html());
+      }
+      counter+=1;
+    });
+    return text;
   }
 });

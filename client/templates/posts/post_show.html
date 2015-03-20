@@ -22,6 +22,9 @@
         </div>
         <div class="col col-10"></div>
       </div>
+      {{#if post.redditText}}
+        {{> textShow}}
+      {{/if}}
       {{#if post.imgurImage}}
         {{> imgurImageShow}}
       {{/if}}
