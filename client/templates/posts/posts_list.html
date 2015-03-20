@@ -21,8 +21,8 @@
       <div class="row responsive-sm">
         <div class="col col-40">
           <button data-ion-modal="addBoardModal" class="button">Add Board</button>
-          <button class="button button-balanced youtube-playlist">
-            YooToob
+          <button class="button button-royal youtube-playlist">
+            YouTube-ify
           </button>
         </div>
       </div>
@@ -31,11 +31,15 @@
           {{> postItem}}
         {{/each}}
       {{/ionList}}
-      <div>
-        <button class="button button-block button-positive load-next">Next</button>
-        {{#unless firstPage}}
-          <button class="button button-block button-positive load-prev">Prev</button>
-        {{/unless}}
+      <div class="row responsive-sm">
+        <div class="col col-50">
+          {{#unless firstPage}}
+            <button class="button button-block button-energized load-prev">Prev</button>
+          {{/unless}}
+        </div>
+        <div class="col col-50">
+          <button class="button button-block button-positive load-next">Next</button>
+        </div>
       </div>
     {{/ionContent}}
   {{/ionView}}
