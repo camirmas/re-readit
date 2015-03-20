@@ -12,6 +12,7 @@ Meteor.publish('boardPosts', function(boardId) {
   return Posts.find({boardId: boardId});
 });
 
-Meteor.publish('posts', function() {
-  return Posts.find();
+Meteor.publish('singlePost', function(id) {
+  check(id, String);
+  return Posts.find({redditId: id});
 });
