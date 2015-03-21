@@ -56,7 +56,7 @@ Template.postsList.events({
       });
     });
     var sub = Session.get('currentSub');
-    
+
     if (page === 0) {
       delete Session.keys['page'];
       if (sub) {
