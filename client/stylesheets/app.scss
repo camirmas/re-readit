@@ -30,3 +30,12 @@ a {
 .error {
   border: 1px solid red;
 }
+
+.ion-edit, .ion-trash-b {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.ion-edit {
+  margin-right: 4%;
+}

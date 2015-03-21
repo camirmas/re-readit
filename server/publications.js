@@ -16,3 +16,7 @@ Meteor.publish('singlePost', function(id) {
   check(id, String);
   return Posts.find({redditId: id});
 });
+
+Meteor.publish('posts', function() {
+  return Posts.find();
+});

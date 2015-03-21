@@ -1,16 +1,16 @@
 <template name="boardCard">
   <div class="list card col col-25">
     <a href="{{pathFor 'boardShow'}}">
-      <div class="item item-avatar">
+      <div class="item">
         <h2>{{name}}</h2>
       </div>
-      <div class="item item-image">
+      <div class="item item-image board-cover">
         <img src="{{coverImage}}" alt="" />
       </div>
     </a>
     <div class="item">
-      <a href="#">Edit</a> |
-      <a href="#">Delete</a>
+      <i class="ion-edit board-edit"></i>
+      <i class="ion-trash-b board-delete"></i>
     </div>
   </div>
 </template>
