@@ -1,6 +1,9 @@
 Template.postsList.helpers({
   firstPage: function() {
     return !Session.get('page');
+  },
+  postsLoaded: function() {
+    return RedditPosts.find().count() !== 0;
   }
 });
 

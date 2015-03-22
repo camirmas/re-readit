@@ -26,6 +26,9 @@
           </button>
         </div>
       </div>
+      {{#unless postsLoaded}}
+        {{> spinner}}
+      {{/unless}}
       {{#ionList}}
         {{#each posts}}
           {{> postItem}}
