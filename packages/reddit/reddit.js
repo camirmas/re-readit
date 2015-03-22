@@ -66,7 +66,6 @@ Meteor.methods({
     var text;
     $('.usertext-body').each(function() {
       if (counter == 1) {
-        console.log($(this).html());
         text = ($(this).html());
       }
       counter+=1;

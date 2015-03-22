@@ -17,7 +17,9 @@
             by: {{post.author}}
           </p>
           {{#unless postSaved}}
-            <button data-ion-modal="saveModal" class="button button-outline button-calm save-modal">Save</button>
+            {{#if currentUser}}
+              <button data-ion-modal="saveModal" class="button button-outline button-calm save-modal">Save</button>
+            {{/if}}
           {{/unless}}
         </div>
         <div class="col col-10"></div>

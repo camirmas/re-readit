@@ -10,7 +10,6 @@ Template.youtubePlaylist.events({
 Template.youtubePlaylist.rendered = function() {
   if (Meteor.isClient) {
     var playlistIds = this.data.split(',');
-    console.log(playlistIds);
     onYouTubeIframeAPIReady = function () {
       player2 = new YT.Player("playlist-player", {
         height: "400",

@@ -2,14 +2,18 @@
   {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton}}
   {{/contentFor}}
-  
+
   {{#contentFor "headerTitle"}}
     <h1 class="title">Boards</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
-      <button data-ion-modal="addBoardModal" class="button">Add Board</button>
+      {{#if currentUser}}
+        <button data-ion-modal="addBoardModal" class="button add-board">Add Board</button>
+      {{else}}
+        <button data-ion-modal="authModal" class="button">Sign in to Add Boards</button>
+      {{/if}}
       <div class="row responsive-md boards">
         {{#each boards}}
           {{> boardCard}}

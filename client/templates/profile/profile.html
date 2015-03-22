@@ -1,0 +1,20 @@
+<template name="profile">
+  {{#contentFor "headerTitle"}}
+    {{#if currentUser}}
+      <h1 class="title">Profile</h1>
+    {{else}}
+      <h1 class="title">Log In</h1>
+    {{/if}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#if currentUser}}
+        <h1>welcome back {{currentUser.username}}</h1>
+        <button class="button button-outline button-assertive log-out">Log Out</button>
+      {{else}}
+        {{> authForm}}
+      {{/if}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

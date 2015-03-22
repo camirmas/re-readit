@@ -20,7 +20,9 @@
       </div>
       <div class="row responsive-sm">
         <div class="col col-40">
-          <button data-ion-modal="addBoardModal" class="button">Add Board</button>
+          {{#if currentUser}}
+            <button data-ion-modal="addBoardModal" class="button">Add Board</button>
+          {{/if}}
           <button class="button button-royal youtube-playlist">
             YouTube-ify
           </button>

@@ -3,3 +3,12 @@ Template.boardsList.helpers({
     return Boards.find();
   }
 });
+
+Template.boardsList.events({
+  'click .add-board': function(e) {
+    if (!Meteor.user()) {
+      e.preventDefault();
+      Router.go('/profile');
+    }
+  }
+});
