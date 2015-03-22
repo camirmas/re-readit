@@ -10,9 +10,12 @@ Template.boardCard.helpers({
 
 Template.boardCard.events({
   'click .board-delete': function() {
+    var _this = this;
     if (confirm("Are you sure you want to delete this?")) {
-      console.log(this._id);
-      console.log(Posts.find({boardId: this._id}));
+      Posts.find({boardId: this._id}).forEach(function(post) {
+        Meteor.call('postDelete', post);
+      });
+      Meteor.call('boardDelete', _this);
     }
   }
 });
