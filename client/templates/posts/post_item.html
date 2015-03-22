@@ -6,13 +6,18 @@
     <div class="score col col-10">
       {{score}}
     </div>
-    <div class="description col col-80">
+    <div class="description col col-60">
       <div class="item-text-wrap">
         <h2>{{title}}</h2>
       </div>
       <p>
         by: {{author}} | to: {{subreddit}}
       </p>
+    </div>
+    <div class="col col-20">
+      {{#if onBoard}}
+        <button class="button button-outline button-assertive remove-post">Remove</button>
+      {{/if}}
     </div>
   {{/ionItem}}
 </template>

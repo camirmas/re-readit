@@ -4,11 +4,20 @@ Template.postItem.helpers({
   },
   thumbnail: function() {
     return this.thumbnail || "http://placehold.it/140x100&text=hello+:)";
+  },
+  onBoard: function() {
+    return !!this.boardId;
   }
 });
 
 Template.postItem.events({
   'click .post': function(e, template) {
     Session.set('currentPost', template.data);
+  },
+  'click .remove-post': function(e) {
+    e.preventDefault();
+    if (confirm("Are you sure you want to delete this?")) {
+      Meteor.call('postDelete', this);
+    }
   }
 })
