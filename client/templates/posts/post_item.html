@@ -16,7 +16,9 @@
     </div>
     <div class="col col-20">
       {{#if onBoard}}
-        <button class="button button-outline button-assertive remove-post">Remove</button>
+        {{#if canModify}}
+          <button class="button button-outline button-assertive remove-post">Remove</button>
+        {{/if}}
       {{/if}}
     </div>
   {{/ionItem}}

@@ -7,6 +7,9 @@ Template.postItem.helpers({
   },
   onBoard: function() {
     return !!this.boardId;
+  },
+  canModify: function() {
+    return Boards.findOne(this.boardId).userId === Meteor.user()._id;
   }
 });
 
