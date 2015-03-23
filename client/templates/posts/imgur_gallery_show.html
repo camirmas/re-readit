@@ -1,3 +1,5 @@
 <template name="imgurGalleryShow">
-  <img src="{{post.imgurGallery}}" alt="" />
+  {{#each post.imgurGallery.images}}
+    <img src="{{link}}" alt="" />
+  {{/each}}
 </template>
