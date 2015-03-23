@@ -5,6 +5,9 @@ Template.boardCard.helpers({
       return post.thumbnail;
     }
     return "http://placehold.it/600x400&text=hello+:)";
+  },
+  canModify: function() {
+    return this.userId === Meteor.user()._id;
   }
 });
 

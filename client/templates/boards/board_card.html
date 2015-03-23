@@ -8,10 +8,12 @@
         <img src="{{coverImage}}" alt="" />
       </div>
     </a>
-    <div class="item">
-      <i class="ion-edit board-edit"></i>
-      <i class="ion-trash-b board-delete"></i>
-    </div>
+    {{#if canModify}}
+      <div class="item">
+        <i class="ion-edit board-edit"></i>
+        <i class="ion-trash-b board-delete"></i>
+      </div>
+    {{/if}}
     <div class="item board-edit-form hidden">
       <label class="item item-input item-floating-label">
         <input class="name-input" type="text" placeholder="Name">

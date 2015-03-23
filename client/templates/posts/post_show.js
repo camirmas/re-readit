@@ -1,5 +1,6 @@
 Template.postShow.helpers({
   postSaved: function() {
-    return !!Posts.findOne().boardId
+    // console.log(Boards.findOne({userId: Meteor.user()._id}));
+    return !!Posts.findOne().boardId;
   }
 });
