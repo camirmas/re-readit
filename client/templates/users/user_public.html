@@ -1,0 +1,19 @@
+<template name="userPublic">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">hello</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <h1>{{user.username}}</h1>
+      <button class="button button-outline button-positive">Follow</button>
+      {{#each boards}}
+        {{> boardCard}}
+      {{/each}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

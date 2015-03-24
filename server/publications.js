@@ -20,3 +20,11 @@ Meteor.publish('singlePost', function(id) {
 Meteor.publish('posts', function() {
   return Posts.find();
 });
+
+Meteor.publish('singleUser', function(id) {
+  return Meteor.users.find({_id: id});
+});
+
+Meteor.publish('userBoards', function(id) {
+  return Boards.find({userId: id});
+})
