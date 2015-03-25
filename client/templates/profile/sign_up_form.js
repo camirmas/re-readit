@@ -18,6 +18,7 @@ Template.signUpForm.events({
       if (error) {
         console.log(error);
       } else {
+        Meteor.call('insertFollowing');
         $('*[data-dismiss="modal"]').trigger('click');
       }
     });

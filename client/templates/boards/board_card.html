@@ -15,7 +15,11 @@
       </div>
     {{else}}
       <div class="item">
-        <i class="ion-plus">Follow</i>
+        {{#if following}}
+          <i class="ion-plus follow-board">Follow</i>
+        {{else}}
+          <i class="ion-minus unfollow-board">Unfollow</i>
+        {{/if}}
       </div>
     {{/if}}
     <div class="item board-edit-form hidden">
