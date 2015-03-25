@@ -22,7 +22,7 @@ Meteor.publish('posts', function() {
 });
 
 Meteor.publish('singleUser', function(id) {
-  return Meteor.users.find({_id: id});
+  return Meteor.users.find(id);
 });
 
 Meteor.publish('userBoards', function(id) {
@@ -31,4 +31,8 @@ Meteor.publish('userBoards', function(id) {
 
 Meteor.publish('following', function() {
   return Following.find();
-})
+});
+
+Meteor.publish('followers', function() {
+  return Followers.find();
+});
