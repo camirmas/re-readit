@@ -4,6 +4,14 @@ Template.userPublic.helpers({
   },
   isCurrent: function() {
     return Meteor.user()._id === this._id;
+  },
+  followers: function() {
+    var followerIds = Followers.findOne({userId: this._id}).users;
+    return Meteor.users.find({_id: {$in: followerIds}}).count();
+  },
+  following: function() {
+    var followingIds = Following.findOne({userId: this._id}).users;
+    return Meteor.users.find({_id: {$in: followingIds}}).count();
   }
 });
 

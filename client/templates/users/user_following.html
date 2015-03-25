@@ -1,0 +1,17 @@
+<template name="userFollowing">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Following</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#each following}}
+        <li>{{username}}</li>
+      {{/each}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

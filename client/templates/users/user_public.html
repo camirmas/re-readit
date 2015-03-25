@@ -13,6 +13,8 @@
       {{#unless isCurrent}}
         <button class="button button-outline button-positive follow-user">Follow</button>
       {{/unless}}
+      <a href="{{pathFor 'userFollowers'}}">{{followers}} Followers</a>
+      <a href="{{pathFor 'userFollowing'}}">{{following}} Following</a>
       {{#each boards}}
         {{> boardCard}}
       {{/each}}

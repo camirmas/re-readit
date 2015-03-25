@@ -36,3 +36,7 @@ Meteor.publish('following', function() {
 Meteor.publish('followers', function() {
   return Followers.find();
 });
+
+Meteor.publish('users', function() {
+  return Meteor.users.find();
+});
