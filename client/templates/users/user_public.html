@@ -9,8 +9,10 @@
 
   {{#ionView}}
     {{#ionContent}}
-      <h1>{{user.username}}</h1>
-      <button class="button button-outline button-positive">Follow</button>
+      <h1>{{username}}</h1>
+      {{#unless isCurrent}}
+        <button class="button button-outline button-positive follow-user">Follow</button>
+      {{/unless}}
       {{#each boards}}
         {{> boardCard}}
       {{/each}}

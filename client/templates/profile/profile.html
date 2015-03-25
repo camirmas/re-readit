@@ -12,6 +12,9 @@
       {{#if currentUser}}
         <h1>welcome back {{currentUser.username}}</h1>
         <button class="button button-outline button-assertive log-out">Log Out</button>
+        <div class="">
+          <a href="/users/{{currentUser._id}}">See public profile</a>
+        </div>
       {{else}}
         {{> authForm}}
       {{/if}}

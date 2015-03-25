@@ -18,6 +18,8 @@ Template.signUpForm.events({
       if (error) {
         console.log(error);
       } else {
+        Meteor.call('createFollowers', Meteor.user()._id);
+        Meteor.call('createFollowing', Meteor.user()._id);
         $('*[data-dismiss="modal"]').trigger('click');
       }
     });

@@ -22,9 +22,17 @@ Meteor.publish('posts', function() {
 });
 
 Meteor.publish('singleUser', function(id) {
-  return Meteor.users.find({_id: id});
+  return Meteor.users.find(id);
 });
 
 Meteor.publish('userBoards', function(id) {
   return Boards.find({userId: id});
-})
+});
+
+Meteor.publish('followers', function() {
+  return Followers.find();
+});
+
+Meteor.publish('following', function() {
+  return Following.find();
+});
