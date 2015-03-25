@@ -29,6 +29,6 @@ Meteor.publish('userBoards', function(id) {
   return Boards.find({userId: id});
 });
 
-Meteor.publish('following', function(id) {
-  return Following.find({userId: id});
+Meteor.publish('following', function() {
+  return Following.find();
 })
