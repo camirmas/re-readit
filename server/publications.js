@@ -29,10 +29,10 @@ Meteor.publish('userBoards', function(id) {
   return Boards.find({userId: id});
 });
 
-Meteor.publish('followers', function() {
-  return Followers.find();
-});
-
 Meteor.publish('following', function() {
   return Following.find();
+});
+
+Meteor.publish('followers', function() {
+  return Followers.find();
 });
