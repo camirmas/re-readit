@@ -1,0 +1,29 @@
+<template name="newsfeed">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Newsfeed</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each notifications}}
+          {{#if boardCreated}}
+            {{#ionItem class="row responsive-sm post"}}
+              {{userName}} created the board {{boardName}}!
+            {{/ionItem}}
+          {{/if}}
+          {{#if postAdded}}
+            {{#ionItem class="row responsive-sm post"}}
+              {{userName}} added a post to {{boardName}}!
+            {{/ionItem}}
+          {{/if}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
