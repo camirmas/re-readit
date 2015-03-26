@@ -21,3 +21,5 @@ meteorhacks:npm
 
 npm-container
 accounts-password
+sanjo:jasmine
+velocity:html-reporter
