@@ -27,8 +27,12 @@ Template.userPublic.events({
 
 Template.userPublic.events({
   'click .follow-board': function(e) {
+    var board = Boards.findOne(this._id)
+    var user = Meteor.user()._id
+    var followers = Followers.findOne({userId: user})
     if (Meteor.user()) {
       Meteor.call('followingAddBoard', this._id);
+      Meteor.call('addBoardFollower', followers, board.userId)
     }
   },
   'click .unfollow-board': function(e) {
