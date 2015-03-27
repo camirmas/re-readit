@@ -20,7 +20,12 @@ Template.signUpForm.events({
       } else {
         Meteor.call('createFollowers', Meteor.user()._id);
         Meteor.call('createFollowing', Meteor.user()._id);
-        $('*[data-dismiss="modal"]').trigger('click');
+        
+        if ($('*[data-dismiss="modal"]').length === 1) {
+          $('*[data-dismiss="modal"]').trigger('click');
+        } else {
+          Router.go('userPublic', {_id: Meteor.user()._id});
+        }
       }
     });
   }
