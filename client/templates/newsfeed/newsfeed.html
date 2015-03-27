@@ -12,16 +12,21 @@
       {{#ionList}}
         {{#each notifications}}
           {{#if boardCreated}}
-            {{#ionItem class="row responsive-sm post"}}
+            {{#ionItem}}
               <div>
-                <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
-                <h6>{{date}}</h6>
-                <p>created the board <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+                <div class="col col-10">
+                  <img src="http://placehold.it/140x100&text=hello+:)" alt="" />
+                </div>
+                <div class="col-90">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>created the board <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+                </div>
               </div>
             {{/ionItem}}
           {{/if}}
           {{#if postAdded}}
-            {{#ionItem class="row responsive-sm post"}}
+            {{#ionItem}}
               <div class="">
                 <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
                 <h6>{{date}}</h6>
@@ -30,11 +35,16 @@
             {{/ionItem}}
           {{/if}}
           {{#if startedFollowing}}
-            {{#ionItem class="row responsive-sm post"}}
-              <div>
-                <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
-                <h6>{{date}}</h6>
-                <p>started following you!</p>
+            {{#ionItem}}
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/160x120&text=hello+:)" alt="" />
+                </div>
+                <div class="col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>started following you!</p>
+                </div>
               </div>
             {{/ionItem}}
           {{/if}}
