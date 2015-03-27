@@ -4,24 +4,46 @@
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">hello</h1>
+    <h1 class="title">{{username}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
-      <h1>{{username}}</h1>
-      {{#unless isCurrent}}
-        <button class="button button-outline button-positive follow-user">Follow</button>
-      {{else}}
-        <a href="{{pathFor 'userEdit'}}" class="button button-outline button-energized">Edit Profile</a>
-      {{/unless}}
-      <div class="">
-        <a href="{{pathFor 'userFollowers'}}">{{followers}} Followers</a>
-        <a href="{{pathFor 'userFollowing'}}">{{following}} Following</a>
+      <div class="card">
+        <div class="item row">
+          <div class="col col-20">
+            <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
+          </div>
+          <div class="col col-80">
+            <h1>{{username}}</h1>
+            <div class="">
+              <a href="{{pathFor 'userFollowers'}}">{{followers}} Followers</a>
+              |
+              <a href="{{pathFor 'userFollowing'}}">{{following}} Following</a>
+            </div>
+            <div class="">
+              {{numBoards}} Boards
+            </div>
+            <div class="follow-or-edit">
+              {{#unless isCurrent}}
+                {{#unless isFollowing}}
+                  <button class="button button-outline button-positive follow-user">Follow</button>
+                {{else}}
+                  <button class="button button-clear button-calm">You are Following</button>
+                {{/unless}}
+              {{else}}
+                <a href="{{pathFor 'userEdit'}}" class="button button-outline button-energized">Edit Profile</a>
+              {{/unless}}
+            </div>
+          </div>
+        </div>
       </div>
-      {{#each boards}}
-        {{> boardCard}}
-      {{/each}}
+      <h2 class="centered">{{username}}'s Boards</h2>
+      <div class="row responsive-sm">
+        {{#each boards}}
+          {{> boardCard}}
+        {{/each}}
+      </div>
     {{/ionContent}}
   {{/ionView}}
 </template>
