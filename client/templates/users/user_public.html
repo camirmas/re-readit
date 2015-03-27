@@ -12,9 +12,13 @@
       <h1>{{username}}</h1>
       {{#unless isCurrent}}
         <button class="button button-outline button-positive follow-user">Follow</button>
+      {{else}}
+        <a href="{{pathFor 'userEdit'}}" class="button button-outline button-energized">Edit Profile</a>
       {{/unless}}
-      <a href="{{pathFor 'userFollowers'}}">{{followers}} Followers</a>
-      <a href="{{pathFor 'userFollowing'}}">{{following}} Following</a>
+      <div class="">
+        <a href="{{pathFor 'userFollowers'}}">{{followers}} Followers</a>
+        <a href="{{pathFor 'userFollowing'}}">{{following}} Following</a>
+      </div>
       {{#each boards}}
         {{> boardCard}}
       {{/each}}
