@@ -13,12 +13,16 @@
         {{#each notifications}}
           {{#if boardCreated}}
             {{#ionItem class="row responsive-sm post"}}
-              <a href={{pathFor 'userPublic' userId}}>{{userName}}</a> created the board {{boardName}}!
+              <div>
+                <a href='/users/{{userId}}'>{{userName}}</a> created the board <a href='/boards/{{boardId}}'>{{boardName}}</a>- {{date}}
+              </div>
             {{/ionItem}}
           {{/if}}
           {{#if postAdded}}
             {{#ionItem class="row responsive-sm post"}}
-            <a href={{pathFor 'userPublic' userId}}>{{userName}}</a> added a post to {{boardName}}!
+              <div class="">
+                <a href='/users/{{userId}}'>{{userName}}</a> added a post to <a href='/boards/{{boardId}}'>{{boardName}}</a>- {{date}}
+              </div>
             {{/ionItem}}
           {{/if}}
         {{/each}}
