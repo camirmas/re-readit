@@ -14,7 +14,7 @@
       {{else}}
         {{> ionTab title="Login" path="login" icon="person"}}
       {{/if}}
-      {{> ionTab title="Newsfeed" path="newsfeed" icon="navicon"}}
+      {{> ionTab class="has-badge unreadNotif" title="Newsfeed" path="newsfeed" icon="navicon" badgeNumber=unreadNotifications badge-style="badge-assertive"}}
     {{/ionTabs}}
   {{/ionBody}}
 </template>
