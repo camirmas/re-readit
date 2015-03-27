@@ -12,6 +12,13 @@ Template.userPublic.helpers({
   following: function() {
     var followingIds = Following.findOne({userId: this._id}).users;
     return Meteor.users.find({_id: {$in: followingIds}}).count();
+  },
+  isFollowing: function() {
+    var followerIds = Followers.findOne({userId: this._id}).users;
+    return _.contains(followerIds, Meteor.user()._id);
+  },
+  numBoards: function() {
+    return Boards.find().count();
   }
 });
 

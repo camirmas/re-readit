@@ -11,10 +11,11 @@
       {{> ionTab title="Boards" path="boardsList" icon="bookmark"}}
       {{#if currentUser}}
         {{> ionTab title="Profile" icon="person" class="public-profile"}}
+        {{> ionTab class="has-badge unreadNotif" title="Newsfeed" path="newsfeed" icon="navicon" badgeNumber=unreadNotifications badge-style="badge-assertive"}}
       {{else}}
         {{> ionTab title="Login" path="login" icon="person"}}
+        {{> ionTab title="Login" path="login" icon="navicon"}}
       {{/if}}
-      {{> ionTab class="has-badge unreadNotif" title="Newsfeed" path="newsfeed" icon="navicon" badgeNumber=unreadNotifications badge-style="badge-assertive"}}
     {{/ionTabs}}
   {{/ionBody}}
 </template>

@@ -9,9 +9,11 @@
 
   {{#ionView}}
     {{#ionContent}}
-      {{#each followers}}
-        <li>{{username}}</li>
-      {{/each}}
+      {{#ionList}}
+        {{#each followers}}
+          {{> userItem}}
+        {{/each}}
+      {{/ionList}}
     {{/ionContent}}
   {{/ionView}}
 </template>
