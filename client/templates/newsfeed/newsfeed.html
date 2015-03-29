@@ -9,15 +9,16 @@
 
   {{#ionView}}
     {{#ionContent}}
+      {{> inputAutocomplete settings=settings id="msg" class="input-large"}}
       {{#ionList}}
         {{#each notifications}}
           {{#if boardCreated}}
             {{#ionItem}}
-              <div>
-                <div class="col col-10">
-                  <img src="http://placehold.it/140x100&text=hello+:)" alt="" />
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
                 </div>
-                <div class="col-90">
+                <div class="col col-80">
                   <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
                   <h6>{{date}}</h6>
                   <p>created the board <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
@@ -27,10 +28,15 @@
           {{/if}}
           {{#if postAdded}}
             {{#ionItem}}
-              <div class="">
-                <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
-                <h6>{{date}}</h6>
-                <p>added a post to <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
+                </div>
+                <div class="col col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>added a post to <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+                </div>
               </div>
             {{/ionItem}}
           {{/if}}
@@ -40,7 +46,7 @@
                 <div class="col col-20">
                   <img src="http://placehold.it/160x120&text=hello+:)" alt="" />
                 </div>
-                <div class="col-80">
+                <div class="col col-80">
                   <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
                   <h6>{{date}}</h6>
                   <p>started following you!</p>
