@@ -2,7 +2,7 @@ Template.layout.helpers({
   unreadNotifications: function() {
     var user = Meteor.user()._id;
     return Notifications.find({followers: user, read: false}).count();
-  },
+  }
 })
 
 Template.layout.events({

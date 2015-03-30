@@ -1,11 +1,15 @@
 <template name="userPublic">
-  {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton}}
-  {{/contentFor}}
+  <div class="row">
+    {{#contentFor "headerButtonLeft"}}
+      <div class="col col-20">
+        {{>ionNavBackButton}}
+      </div>
+    {{/contentFor}}
 
-  {{#contentFor "headerTitle"}}
-    <h1 class="title">{{username}}</h1>
-  {{/contentFor}}
+    {{#contentFor "headerTitle"}}
+        {{> inputAutocomplete settings=settings id="msg" class="input-small" placeholder="Search for a user..."}}
+    {{/contentFor}}
+  </div>
 
   {{#ionView}}
     {{#ionContent}}

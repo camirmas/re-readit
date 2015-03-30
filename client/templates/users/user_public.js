@@ -19,6 +19,22 @@ Template.userPublic.helpers({
   },
   numBoards: function() {
     return Boards.find().count();
+  },
+  settings: function() {
+    return {
+      limit: 10,
+      rules: [
+        {
+          collection: Meteor.users,
+          field: 'username',
+          matchAll: true,
+          template: Template.autocomplete
+        }
+      ]
+    };
+  },
+  users: function() {
+    return Meteor.users.find();
   }
 });
 

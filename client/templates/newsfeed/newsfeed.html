@@ -9,32 +9,48 @@
 
   {{#ionView}}
     {{#ionContent}}
+      {{> inputAutocomplete settings=settings id="msg" class="input-large"}}
       {{#ionList}}
         {{#each notifications}}
           {{#if boardCreated}}
-            {{#ionItem class="row responsive-sm post"}}
-              <div>
-                <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
-                <h6>{{date}}</h6>
-                <p>created the board <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+            {{#ionItem}}
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
+                </div>
+                <div class="col col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>created the board <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+                </div>
               </div>
             {{/ionItem}}
           {{/if}}
           {{#if postAdded}}
-            {{#ionItem class="row responsive-sm post"}}
-              <div class="">
-                <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
-                <h6>{{date}}</h6>
-                <p>added a post to <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+            {{#ionItem}}
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
+                </div>
+                <div class="col col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>added a post to <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+                </div>
               </div>
             {{/ionItem}}
           {{/if}}
           {{#if startedFollowing}}
-            {{#ionItem class="row responsive-sm post"}}
-              <div>
-                <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
-                <h6>{{date}}</h6>
-                <p>started following you!</p>
+            {{#ionItem}}
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/160x120&text=hello+:)" alt="" />
+                </div>
+                <div class="col col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>started following you!</p>
+                </div>
               </div>
             {{/ionItem}}
           {{/if}}
