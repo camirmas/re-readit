@@ -3,13 +3,6 @@ $loading-font-size: 22px;
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
-
-.score {
-  float: left;
-  font-size: 2em;
-  margin-right: 10px;
-}
-
 img, #player, iframe {
   width: 100%;
 }
@@ -52,7 +45,35 @@ a {
   text-align: center;
 }
 
-.item-title {
+.user-item-title {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.post-item-title {
+  font-size: 1.2em;
+}
+
+.profile-numbers > .col {
+  font-size: 1.5em;
+  padding: 0;
+  text-align: center;
+}
+
+.number-labels > .col {
+  padding: 0;
+  text-align: center;
+}
+
+.profile-username {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.settings {
+  font-size: 1.8em;
+}
+
+.add-board-plus {
+  font-size: 2.5em;
 }

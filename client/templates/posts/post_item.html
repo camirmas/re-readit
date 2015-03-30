@@ -1,14 +1,11 @@
 <template name="postItem">
-  {{#ionItem href=postURL class="row responsive-sm post"}}
-    <div class="thumbnail col col-10">
+  {{#ionItem href=postURL class="row post"}}
+    <div class="thumbnail col col-20">
       <img src="{{thumbnail}}" alt="" />
-    </div>
-    <div class="score col col-10">
-      {{score}}
     </div>
     <div class="description col col-60">
       <div class="item-text-wrap">
-        <h2>{{title}}</h2>
+        <div class="post-item-title">{{title}}</div>
       </div>
       <p>
         by: {{author}} | to: {{subreddit}}
