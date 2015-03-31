@@ -1,7 +1,7 @@
 Template.newsfeed.helpers({
   notifications: function() {
     var userId = Meteor.user()._id;
-    return Notifications.find({followers: userId});
+    return Notifications.find({followers: userId}).fetch().reverse();
   },
   userId: function() {
     return this.userId;
@@ -15,7 +15,7 @@ Template.newsfeed.helpers({
     var difference = now - date
     var minutes = Math.round((difference/1000)/60) ;
     var hours = Math.round((difference/1000)/60/60);
-    var days = Math.round((difference/1000)/60/60);
+    var days = Math.round((difference/1000)/60/60/24);
 
     if (minutes < 60) {
       return minutes + ' minutes ago';
@@ -26,21 +26,5 @@ Template.newsfeed.helpers({
     else {
       return days + ' days ago';
     }
-  },
-  settings: function() {
-    return {
-      limit: 10,
-      rules: [
-        {
-          collection: Meteor.users,
-          field: 'username',
-          matchAll: true,
-          template: Template.autocomplete
-        }
-      ]
-    };
-  },
-  users: function() {
-    return Meteor.users.find();
   }
 });

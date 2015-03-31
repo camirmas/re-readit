@@ -24,5 +24,8 @@ Template.saveModal.events({
         $('*[data-dismiss="modal"]').trigger('click');
       }
     });
+  },
+  'click .cancel': function(e) {
+    $('*[data-dismiss="modal"]').trigger('click');
   }
 });
