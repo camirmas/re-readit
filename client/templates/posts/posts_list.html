@@ -1,30 +1,23 @@
 <template name="postsList">
+  {{#contentFor "headerButtonLeft"}}
+    <i class="ion-play youtube-playlist"></i>
+  {{/contentFor}}
+
   {{#contentFor "headerTitle"}}
     <h1 class="title">Re-Reddit</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
-      <div class="row responsive-sm">
-        <div class="col col-50">
+      <div class="row">
+        <div class="col col-70">
           <label class="item item-input">
             <input type="text" placeholder="subreddit">
           </label>
         </div>
-        <div class="col col-10">
+        <div class="col col-30">
           <button class="button button-balanced find-sub">
             Submit
-          </button>
-        </div>
-        <div class="col col-50"></div>
-      </div>
-      <div class="row responsive-sm">
-        <div class="col col-40">
-          {{#if currentUser}}
-            <button data-ion-modal="addBoardModal" class="button">Add Board</button>
-          {{/if}}
-          <button class="button button-royal youtube-playlist">
-            YouTube-ify
           </button>
         </div>
       </div>
@@ -36,15 +29,13 @@
           {{> postItem}}
         {{/each}}
       {{/ionList}}
-      <div class="row responsive-sm">
-        <div class="col col-50">
-          {{#unless firstPage}}
-            <button class="button button-block button-energized load-prev">Prev</button>
-          {{/unless}}
-        </div>
-        <div class="col col-50">
-          <button class="button button-block button-positive load-next">Next</button>
-        </div>
+      <div class="row">
+        {{#unless firstPage}}
+          <button class="button button-block button-energized load-prev">Prev</button>
+        {{/unless}}
+      </div>
+      <div class="row">
+        <button class="button button-block button-positive load-next">Next</button>
       </div>
     {{/ionContent}}
   {{/ionView}}

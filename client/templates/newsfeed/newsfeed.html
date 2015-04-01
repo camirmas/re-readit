@@ -1,0 +1,61 @@
+<template name="newsfeed">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Newsfeed</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each notifications}}
+          {{#if boardCreated}}
+            {{#ionItem}}
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
+                </div>
+                <div class="col col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>created the board <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+                </div>
+              </div>
+            {{/ionItem}}
+          {{/if}}
+          {{#if postAdded}}
+            {{#ionItem}}
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
+                </div>
+                <div class="col col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>added a post to <a href='/boards/{{boardId}}'>{{boardName}}</a></p>
+                </div>
+              </div>
+            {{/ionItem}}
+          {{/if}}
+          {{#if startedFollowing}}
+            {{#ionItem}}
+              <div class="row">
+                <div class="col col-20">
+                  <img src="http://placehold.it/160x120&text=hello+:)" alt="" />
+                </div>
+                <div class="col col-80">
+                  <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
+                  <h6>{{date}}</h6>
+                  <p>started following you!</p>
+                </div>
+              </div>
+            {{/ionItem}}
+          {{/if}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

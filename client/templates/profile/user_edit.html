@@ -1,19 +1,16 @@
-<template name="boardShow">
+<template name="userEdit">
   {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton}}
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">{{name}}</h1>
+    <h1 class="title">Edit Profile</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
-      {{#ionList}}
-        {{#each posts}}
-          {{> savedPostItem}}
-        {{/each}}
-      {{/ionList}}
+      <h1>this is the edit profile page</h1>
+      <button class="button button-outline button-assertive log-out-button">Log Out</button>
     {{/ionContent}}
   {{/ionView}}
 </template>

@@ -20,3 +20,27 @@ Meteor.publish('singlePost', function(id) {
 Meteor.publish('posts', function() {
   return Posts.find();
 });
+
+Meteor.publish('singleUser', function(id) {
+  return Meteor.users.find(id);
+});
+
+Meteor.publish('userBoards', function(id) {
+  return Boards.find({userId: id});
+});
+
+Meteor.publish('following', function() {
+  return Following.find();
+});
+
+Meteor.publish('followers', function() {
+  return Followers.find();
+});
+
+Meteor.publish('users', function() {
+  return Meteor.users.find();
+});
+
+Meteor.publish('notifications', function() {
+  return Notifications.find()
+})

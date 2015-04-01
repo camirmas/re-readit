@@ -8,6 +8,12 @@ Template.boardCard.helpers({
   },
   canModify: function() {
     return this.userId === Meteor.user()._id;
+  },
+  following: function() {
+    var user = Meteor.user()._id;
+    var following = Following.findOne({userId: user});
+    var boards = following.boards;
+    return boards.indexOf(this._id)===-1;
   }
 });
 

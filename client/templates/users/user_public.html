@@ -1,0 +1,70 @@
+<template name="userPublic">
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">{{username}}</h1>
+    {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="item row">
+        {{> inputAutocomplete settings=settings id="msg" class="input-small" placeholder="Search for a user..."}}
+      </div>
+      <div class="card">
+        <div class="item row">
+          <div class="col col-20">
+            <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
+          </div>
+          <div class="col col-70">
+            <div class="profile-username">{{username}}</div>
+            <div>
+              {{#unless isCurrent}}
+                {{#unless isFollowing}}
+                  <button class="button button-outline button-positive follow-user">Follow</button>
+                {{else}}
+                  <button class="button button-clear button-calm">You are Following</button>
+                {{/unless}}
+              {{else}}
+                <a href="{{pathFor 'userEdit'}}" class="ion-gear-a settings"></a>
+              {{/unless}}
+            </div>
+          </div>
+          <div class="follow-or-edit col col-10">
+          </div>
+        </div>
+        <div class="item">
+          <div class="row profile-numbers">
+            <div class="col col-33">
+              <a href="{{pathFor 'userFollowers'}}">{{followers}}</a>
+            </div>
+            <div class="col col-33">
+              <a href="{{pathFor 'userFollowing'}}">{{following}}</a>
+            </div>
+            <div class="col col-33">
+              {{numBoards}}
+            </div>
+          </div>
+          <div class="row number-labels">
+            <div class="col col-33">
+              <a href="{{pathFor 'userFollowers'}}">Followers</a>
+            </div>
+            <div class="col col-33">
+              <a href="{{pathFor 'userFollowing'}}">Following</a>
+            </div>
+            <div class="col col-33">
+              Boards
+            </div>
+          </div>
+        </div>
+      </div>
+      {{#if isCurrent}}
+        {{>boardCardAdd}}
+      {{/if}}
+      {{#each boards}}
+        {{> boardCard}}
+      {{/each}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

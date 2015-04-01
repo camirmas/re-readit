@@ -1,5 +1,5 @@
 <template name="boardCard">
-  <div class="list card col col-25">
+  <div class="list card">
     <a href="{{pathFor 'boardShow'}}">
       <div class="item">
         <h2>{{name}}</h2>
@@ -13,6 +13,14 @@
         <i class="ion-edit board-edit"></i>
         <i class="ion-trash-b board-delete"></i>
       </div>
+    {{!-- {{else}}
+      <div class="item">
+        {{#if following}}
+          <i class="ion-plus follow-board">Follow</i>
+        {{else}}
+          <i class="ion-minus unfollow-board">Unfollow</i>
+        {{/if}}
+      </div> --}}
     {{/if}}
     <div class="item board-edit-form hidden">
       <label class="item item-input item-floating-label">
