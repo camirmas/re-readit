@@ -3,7 +3,6 @@ Template.userItem.helpers({
     return '/users/' + this._id;
   },
   currentUser: function() {
-    console.log(this);
     return Meteor.user()._id === this._id;
   },
   isFollowing: function() {
