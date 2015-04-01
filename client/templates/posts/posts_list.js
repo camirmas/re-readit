@@ -76,6 +76,7 @@ Template.postsList.events({
     }
   },
   'click .youtube-playlist': function(e) {
+    console.log('hi');
     var redditPosts = this.posts.collection._docs._map;
     var urlArr;
     var idIndex;

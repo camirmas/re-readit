@@ -9,8 +9,19 @@
 
   {{#ionView}}
     {{#ionContent}}
-      <h1>this is the edit profile page</h1>
-      <button class="button button-outline button-assertive log-out-button">Log Out</button>
+      <label class="item item-input">
+        <input type="text" class="sign-up-username" placeholder="username">
+      </label>
+      <label class="item item-input">
+        <input type="password" class="sign-up-password" placeholder="password">
+      </label>
+      <label class="item item-input">
+        <input type="password" class="password-confirmation" placeholder="password confirmation">
+      </label>
+      <div class="">
+        <button class="button button-positive">Save</button>
+        <button class="button button-assertive log-out-button">Log Out</button>
+      </div>
     {{/ionContent}}
   {{/ionView}}
 </template>

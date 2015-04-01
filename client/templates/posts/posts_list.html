@@ -1,6 +1,6 @@
 <template name="postsList">
   {{#contentFor "headerButtonLeft"}}
-    <i class="ion-play youtube-playlist"></i>
+    <button class="button button-clear ion-play youtube-playlist"></button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
@@ -10,15 +10,13 @@
   {{#ionView}}
     {{#ionContent}}
       <div class="row">
-        <div class="col col-70">
+        <div class="col col-80">
           <label class="item item-input">
-            <input type="text" placeholder="subreddit">
+            <input type="text" placeholder="subreddit...">
           </label>
         </div>
-        <div class="col col-30">
-          <button class="button button-balanced find-sub">
-            Submit
-          </button>
+        <div class="col col-20">
+          <button class="button button-positive ion-search find-sub"></button>
         </div>
       </div>
       {{#unless postsLoaded}}
@@ -30,12 +28,12 @@
         {{/each}}
       {{/ionList}}
       <div class="row">
-        {{#unless firstPage}}
-          <button class="button button-block button-energized load-prev">Prev</button>
-        {{/unless}}
-      </div>
-      <div class="row">
-        <button class="button button-block button-positive load-next">Next</button>
+        {{#if firstPage}}
+          <button class="button button-block button-positive load-next">Next</button>
+        {{else}}
+          <button class="button button-block button-positive load-prev col col-50">Prev</button>
+          <button class="button button-block button-positive load-next col col-50">Next</button>
+        {{/if}}
       </div>
     {{/ionContent}}
   {{/ionView}}

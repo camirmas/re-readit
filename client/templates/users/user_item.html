@@ -4,9 +4,20 @@
       <div class="col col-20">
         <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
       </div>
-      <div class="col col-80">
+      <div class="col col-50">
         <div class="user-item-title">{{username}}</div>
       </div>
+      {{#unless currentUser}}
+        {{#if isFollowing}}
+          <div class="col col-30">
+            <button class="button button-stable unfollow-user">unfollow</button>
+          </div>
+        {{else}}
+          <div class="col col-30">
+            <button class="button button-positive follow-user">follow</button>
+          </div>
+        {{/if}}
+      {{/unless}}
     </div>
   {{/ionItem}}
 </template>
