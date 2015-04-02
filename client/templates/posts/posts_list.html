@@ -1,6 +1,5 @@
 <template name="postsList">
   {{#contentFor "headerButtonLeft"}}
-    <button class="button button-clear ion-play youtube-playlist"></button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
@@ -10,13 +9,16 @@
   {{#ionView}}
     {{#ionContent}}
       <div class="row">
-        <div class="col col-80">
+        <div class="col col-67">
           <label class="item item-input">
             <input type="text" placeholder="subreddit...">
           </label>
         </div>
         <div class="col col-20">
           <button class="button button-positive ion-search find-sub"></button>
+        </div>
+        <div class="col col-10">
+          <button class="button button-outline button-assertive ion-play youtube-playlist"></button>
         </div>
       </div>
       {{#unless postsLoaded}}

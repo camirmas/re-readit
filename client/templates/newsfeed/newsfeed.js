@@ -18,12 +18,25 @@ Template.newsfeed.helpers({
     var days = Math.round((difference/1000)/60/60/24);
 
     if (minutes < 60) {
-      return minutes + ' minutes ago';
+      if (minutes === 1) {
+        return minutes + ' minute ago';
+      }
+      else {
+        return minutes + ' minutes ago';
+      }
     }
     else if (hours < 24) {
-      return hours + ' hours ago';
+      if (hours === 1) {
+        return hours + ' hour ago';
+      }
+      else {
+        return hours + ' hours ago';
+      }
     }
     else {
+      if (days === 1) {
+        return days + ' day ago';
+      }
       return days + ' days ago';
     }
   }
