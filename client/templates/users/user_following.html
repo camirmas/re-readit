@@ -1,4 +1,4 @@
-<template name="userFollowing">
+ <template name="userFollowing">
   {{#contentFor "headerButtonLeft"}}
     {{>ionNavBackButton}}
   {{/contentFor}}
@@ -10,7 +10,7 @@
   {{#ionView}}
     {{#ionContent}}
       {{#each following}}
-        <li>{{username}}</li>
+        {{> userItem}}
       {{/each}}
     {{/ionContent}}
   {{/ionView}}

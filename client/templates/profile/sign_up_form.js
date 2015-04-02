@@ -10,6 +10,9 @@ Template.signUpForm.events({
     }
 
     var user = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
       username: username,
       password: password
     }
@@ -20,7 +23,7 @@ Template.signUpForm.events({
       } else {
         Meteor.call('createFollowers', Meteor.user()._id);
         Meteor.call('createFollowing', Meteor.user()._id);
-        
+
         if ($('*[data-dismiss="modal"]').length === 1) {
           $('*[data-dismiss="modal"]').trigger('click');
         } else {

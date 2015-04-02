@@ -11,5 +11,12 @@
         by: {{author}} | to: {{subreddit}}
       </p>
     </div>
+    {{#if onBoard}}
+      {{#if canModify}}
+        <div class="col col-20 col-center">
+          <button class="button button-clear remove-post ion-close-round"></button>
+        </div>
+      {{/if}}
+    {{/if}}
   {{/ionItem}}
 </template>

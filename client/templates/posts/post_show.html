@@ -9,7 +9,7 @@
 
   {{#ionView}}
     {{#ionContent}}
-      <div class="row responsive-sm">
+      <div class="row">
         <div class="col col-10"></div>
         <div class="col col-80">
           <a target="_blank" href="{{post.url}}"><span class="post-title">{{post.title}}</span></a>
@@ -18,13 +18,13 @@
           </p>
           {{#unless postSaved}}
             {{#if currentUser}}
-              <button data-ion-modal="saveModal" class="button button-outline button-calm save-modal">Save</button>
+              <button data-ion-modal="saveModal" class="button button-positive save-modal">Save</button>
             {{/if}}
           {{/unless}}
         </div>
         <div class="col col-10"></div>
       </div>
-      <div class="row responsive-sm">
+      <div class="row">
         <div class="col col-10"></div>
         <div class="col col-80">
           {{#if post.redditText}}

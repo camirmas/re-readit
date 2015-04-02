@@ -46,8 +46,7 @@ a {
 }
 
 .user-item-title {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .post-item-title {
@@ -71,7 +70,7 @@ a {
 }
 
 .settings {
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 
 .add-board-plus {
@@ -80,4 +79,16 @@ a {
 
 .youtube-playlist {
   font-size: 2em;
+}
+
+.board-card-name {
+  text-align: center;
+}
+
+.remove-post {
+  color: #E82323 !important;
+}
+
+.find-sub {
+  width: 100%;
 }

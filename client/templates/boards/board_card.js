@@ -2,7 +2,7 @@ Template.boardCard.helpers({
   coverImage: function() {
     var post = Posts.findOne({boardId: this._id});
     if (post) {
-      return post.thumbnail;
+      return post.imgurImage || post.thumbnail;
     }
     return "http://placehold.it/600x400&text=hello+:)";
   },

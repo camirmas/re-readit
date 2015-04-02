@@ -22,6 +22,7 @@ Template.userPublic.helpers({
   },
   settings: function() {
     return {
+      position: "bottom",
       limit: 10,
       rules: [
         {
