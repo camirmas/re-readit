@@ -10,9 +10,6 @@ Template.signUpForm.events({
     }
 
     var user = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
       username: username,
       password: password
     }
