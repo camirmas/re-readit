@@ -14,9 +14,6 @@ Template.postItem.helpers({
 });
 
 Template.postItem.events({
-  'click .post': function(e, template) {
-    Session.set('currentPost', template.data);
-  },
   'click .remove-post': function(e) {
     e.preventDefault();
     if (confirm("Are you sure you want to delete this?")) {

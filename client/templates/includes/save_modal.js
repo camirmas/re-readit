@@ -1,7 +1,7 @@
 Template.saveModal.helpers({
   boards: function() {
     return Boards.find({userId: Meteor.user()._id});
-  }
+  },
 });
 
 Template.saveModal.events({
@@ -14,7 +14,8 @@ Template.saveModal.events({
 
     var selected = $('.selected').text().trim();
     var board = Boards.findOne({name: selected});
-    var post = Session.get('currentPost');
+    var postRedditId = Session.get('currentPostId');
+    var post = RedditPosts.findOne({redditId: postRedditId});
     post.boardId = board._id;
     Meteor.call('saveToBoard', post, function(err, res) {
       if (err) {
