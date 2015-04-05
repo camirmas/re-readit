@@ -7,7 +7,7 @@
     {{/ionNavView}}
 
     {{#ionTabs}}
-      {{> ionTab title="Home" path="postsList" icon="home"}}
+      {{> ionTab title="Home" path="postsList" icon="home" class="posts-list"}}
       {{#if currentUser}}
         {{> ionTab title="Profile" icon="person" class="public-profile"}}
         {{> ionTab class="has-badge unreadNotif" title="Newsfeed" path="newsfeed" icon="navicon" badgeNumber=unreadNotifications badge-style="badge-assertive"}}
