@@ -6,6 +6,9 @@ Template.newsfeed.helpers({
   userId: function() {
     return this.userId;
   },
+  userImg: function() {
+    return Meteor.users.findOne(this.userId).userImg;
+  },
   boardId: function() {
     return this.boardId;
   },

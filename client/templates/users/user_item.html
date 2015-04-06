@@ -2,7 +2,11 @@
   {{#ionItem href=userUrl}}
     <div class="row">
       <div class="col col-20">
-        <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
+        {{#if userImg}}
+          <img src="{{userImg}}" alt="" />
+        {{else}}
+          <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
+        {{/if}}
       </div>
       <div class="col col-50">
         <div class="user-item-title">{{username}}</div>

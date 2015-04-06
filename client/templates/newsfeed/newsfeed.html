@@ -15,7 +15,11 @@
             {{#ionItem}}
               <div class="row">
                 <div class="col col-20">
-                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
+                  {{#if userImg}}
+                    <img src="{{userImg}}" alt="" />
+                  {{else}}
+                    <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
+                  {{/if}}
                 </div>
                 <div class="col col-80">
                   <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
@@ -29,7 +33,11 @@
             {{#ionItem}}
               <div class="row">
                 <div class="col col-20">
-                  <img src="http://placehold.it/50x30&text=hello+:)" alt="" />
+                  {{#if userImg}}
+                    <img src="{{userImg}}" alt="" />
+                  {{else}}
+                    <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
+                  {{/if}}
                 </div>
                 <div class="col col-80">
                   <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>
@@ -43,7 +51,11 @@
             {{#ionItem}}
               <div class="row">
                 <div class="col col-20">
-                  <img src="http://placehold.it/160x120&text=hello+:)" alt="" />
+                  {{#if userImg}}
+                    <img src="{{userImg}}" alt="" />
+                  {{else}}
+                    <img src="http://placehold.it/600x600&text=hello+:)" alt="" />
+                  {{/if}}
                 </div>
                 <div class="col col-80">
                   <strong><a href='/users/{{userId}}'>{{userName}}</a></strong>

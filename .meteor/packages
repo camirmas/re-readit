@@ -21,6 +21,5 @@ meteorhacks:npm
 
 npm-container
 accounts-password
-velocity:html-reporter
 velocity:core
 mizzao:autocomplete
