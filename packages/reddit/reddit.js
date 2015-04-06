@@ -4,11 +4,16 @@ Reddit = {
   callUrl: ''
 };
 
+Reddit.getPost = function(link) {
+  var post = Meteor.http.get(link)
+
+  if (post.statusCode === 200) {
+    return post.data[0].data.children[0].data;
+  }
+}
+
 Reddit.getPosts = function(link) {
-  var posts = Meteor.http.get(link, {
-      params: {}
-    }
-  );
+  var posts = Meteor.http.get(link);
 
   if (posts.statusCode === 200) {
     Reddit.callUrl = link;
@@ -48,6 +53,9 @@ Reddit.getPrevPage = function() {
 }
 
 Meteor.methods({
+  'getPost': function(link) {
+    return Reddit.getPost(link);
+  },
   'getPosts': function(link) {
     return Reddit.getPosts(link);
   },
@@ -62,13 +70,13 @@ Meteor.methods({
     var redditPage = Meteor.http.get(redditUrl);
     var cheerio = Meteor.npmRequire('cheerio');
     var $ = cheerio.load(redditPage.content);
-    var counter=0
+    var counter = 0;
     var text;
     $('.usertext-body').each(function() {
       if (counter == 1) {
         text = ($(this).html());
       }
-      counter+=1;
+      counter += 1;
     });
     return text;
   }
